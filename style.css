@@ -169,6 +169,8 @@ ul{margin:0;padding:0;list-style:none}
 .job::before{content:"";position:absolute;left:0;top:.55em;bottom:.25em;width:2px;background:var(--line);border-radius:2px}
 .job--now::before{background:var(--accent)}
 .job-row{display:flex;flex-wrap:wrap;gap:.05rem .9rem;align-items:baseline;justify-content:space-between}
+.co{display:inline-flex;align-items:center;gap:.45rem;min-width:0}
+.co-logo{flex:none;width:1.3rem;height:1.3rem;object-fit:contain;border-radius:4px;background:#fff;padding:1.5px;box-shadow:0 0 0 1px rgba(0,0,0,.1)}
 .job-co{font-weight:700;font-size:.98rem}
 .job-when{font-family:var(--font-mono);font-size:.76rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
 .job-title{color:var(--muted);font-size:.85rem;margin-top:.05rem}
@@ -278,6 +280,7 @@ dialog.lb .lb-close{
   .fig{padding-left:.5rem}
   .fig b{font-size:1rem;white-space:nowrap}
   .fig span{white-space:nowrap}
+  .co-logo{width:4.4mm;height:4.4mm;padding:.3mm;box-shadow:0 0 0 .2mm rgba(0,0,0,.14)}
   .jobs{gap:1.15rem}
   .proj-out{display:none}
   /* The pending notes are reminders to the author, not resume content. */
