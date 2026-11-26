@@ -123,29 +123,25 @@ ul{margin:0;padding:0;list-style:none}
 .blk b{color:#fff;font-weight:500}
 .blk em{font-style:normal;color:#8296aa;font-size:.74rem;display:block}
 
-.mail{
-  display:flex;align-items:center;gap:.45rem;width:100%;
-  font:inherit;font-size:.73rem;text-align:left;
-  padding:.4rem .7rem;border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);
-  color:#dbe5ef;cursor:pointer;overflow-wrap:anywhere;
+/* Screen: icons only. Print: the address and handles spell out — nobody can
+   contact you from a picture of an envelope. */
+.links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.1rem}
+.iconbtn{
+  position:relative;display:inline-grid;place-items:center;
+  width:2.15rem;height:2.15rem;padding:0;
+  border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);
+  color:#dbe5ef;text-decoration:none;font:inherit;cursor:pointer;
   transition:border-color .15s ease,color .15s ease,background .15s ease;
 }
-.mail:hover{border-color:#8fd3e8;color:#fff;background:rgba(143,211,232,.14)}
-.mail:focus-visible{outline:2px solid #8fd3e8;outline-offset:2px}
-.mail .icon{font-size:.85rem;color:#8296aa;flex:none}
-.mail.copied{border-color:#8fd3e8;color:#8fd3e8}
-.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem}
-.links a{
-  display:inline-flex;align-items:center;gap:.4rem;
-  padding:.34rem .7rem;border-radius:999px;
-  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.05);
-  color:#dbe5ef;text-decoration:none;font-size:.74rem;
-  transition:border-color .15s ease,color .15s ease,background .15s ease;
+.iconbtn:hover{border-color:#8fd3e8;color:#fff;background:rgba(143,211,232,.14)}
+.iconbtn:focus-visible{outline:2px solid #8fd3e8;outline-offset:2px}
+.iconbtn .icon{font-size:.95rem}
+.iconbtn .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.iconbtn.copied{border-color:#8fd3e8;color:#8fd3e8}
+.iconbtn.copied::after{
+  content:attr(data-msg);position:absolute;left:50%;top:calc(100% + .25rem);transform:translateX(-50%);
+  font-size:.66rem;white-space:nowrap;color:#8fd3e8;
 }
-.links a:hover{border-color:#8fd3e8;color:#fff;background:rgba(143,211,232,.14)}
-.links a:focus-visible{outline:2px solid #8fd3e8;outline-offset:2px}
-.links .icon{font-size:.88rem}
 
 /* ---------- main ---------- */
 .main{padding:clamp(1.5rem,3.8vw,2.6rem)}
@@ -294,10 +290,15 @@ dialog.lb .lb-close{
   .certs{grid-template-columns:repeat(2,1fr);gap:7mm}
   /* Fixed height, not 4/3: six scans have to fit three rows on one page. */
   .cert img{aspect-ratio:auto;height:50mm}
-  .cert-btn,.mail{cursor:default}
-  /* 62mm sidebar: the address must not break mid-word. */
-  .mail{border-color:rgba(255,255,255,.3);font-size:.66rem;padding:.35rem .5rem;gap:.35rem}
-  .mail .icon{font-size:.78rem}
+  .cert-btn,.iconbtn{cursor:default}
+  .links{flex-direction:column;gap:.34rem}
+  .iconbtn{
+    width:auto;height:auto;display:flex;align-items:center;gap:.42rem;
+    border:0;background:none;color:#cfdbe7;font-size:.66rem;
+  }
+  .iconbtn .icon{font-size:.78rem;color:#8296aa}
+  .iconbtn .lbl{position:static;width:auto;height:auto;clip-path:none;overflow:visible;overflow-wrap:anywhere}
+  .iconbtn.copied::after{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 

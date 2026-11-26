@@ -38,13 +38,16 @@
 
       <div class="blk">
         <span class="blk-h">Contact</span>
-        <button class="mail" type="button" data-copy="chenyujen0218@gmail.com">
-          <svg class="icon"><use href="#i-mail"/></svg><span class="mail-t">chenyujen0218@gmail.com</span>
-        </button>
         <div class="links">
-          <a href="https://github.com/alankowabunga" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg>GitHub</a>
-          <a href="https://www.linkedin.com/in/%E6%98%B1%E4%BB%BB-%E9%99%B3-376286263/" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</a>
-          <a href="https://play.google.com/store/apps/dev?id=○○○" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-app"/></svg>Google Play</a>
+          <button class="iconbtn mail" type="button" data-copy="chenyujen0218@gmail.com" data-msg="Copied" title="chenyujen0218@gmail.com" aria-label="Copy email address">
+            <svg class="icon"><use href="#i-mail"/></svg><span class="lbl">chenyujen0218@gmail.com</span>
+          </button>
+          <a class="iconbtn" href="https://github.com/alankowabunga" target="_blank" rel="noopener noreferrer" title="github.com/alankowabunga" aria-label="GitHub">
+            <svg class="icon"><use href="#i-github"/></svg><span class="lbl">github.com/alankowabunga</span>
+          </a>
+          <a class="iconbtn" href="https://www.linkedin.com/in/%E6%98%B1%E4%BB%BB-%E9%99%B3-376286263/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+            <svg class="icon"><use href="#i-linkedin"/></svg><span class="lbl">linkedin.com/in/昱任-陳</span>
+          </a>
         </div>
       </div>
 
@@ -275,11 +278,11 @@
   });
   lb.addEventListener('click',function(e){if(e.target!==img)lb.close()});
   lb.querySelector('.lb-close').addEventListener('click',function(){lb.close()});
-  var mail=document.querySelector('.mail'),label=mail&&mail.querySelector('.mail-t'),t;
+  var mail=document.querySelector('.mail'),t;
   if(mail){mail.addEventListener('click',function(){
     var v=mail.dataset.copy,done=function(){
-      clearTimeout(t);mail.classList.add('copied');label.textContent='Copied to clipboard';
-      t=setTimeout(function(){mail.classList.remove('copied');label.textContent=v},1600);
+      clearTimeout(t);mail.classList.add('copied');
+      t=setTimeout(function(){mail.classList.remove('copied')},1600);
     };
     if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(done,fallback)}
     else{fallback()}
