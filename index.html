@@ -37,8 +37,6 @@
 <header class="bar">
   <div>
     <p class="kicker">履歷 · 中文版　<a class="lang" href="en.html">English</a></p>
-    <h1>陳昱任 履歷</h1>
-    <p class="hint">列印或存 PDF 時會自動套成 A4：前兩頁是履歷，證照附件自動排成第三頁。這排按鈕不會印出來。</p>
   </div>
   <button class="btn" type="button" onclick="window.print()">列印 / 存成 PDF</button>
 </header>
@@ -47,7 +45,7 @@
   <aside class="side">
     <div class="side-in">
       <img class="portrait" src="img/portrait.jpg" alt="陳昱任的大頭照">
-      <h2 class="name">陳昱任</h2>
+      <h1 class="name">陳昱任</h1>
       <p class="name-en">Yu-Jen Chen</p>
       <p class="role">軟體工程師</p>
       <p class="yrs">軟體開發 3 年 · 2023 迄今</p>
@@ -207,7 +205,7 @@
 <section class="attach">
   <div class="attach-h">
     <h2>證照與訓練</h2>
-    <p>點任一張可放大。身分證字號、出生日期與多益查詢 QR code 已遮蔽。</p>
+    <p>點任一張可放大。</p>
   </div>
 
   <div class="certs">
@@ -283,16 +281,6 @@
   <button class="lb-close" type="button" autofocus>關閉</button>
   <img id="lb-img" src="" alt="">
 </dialog>
-
-<footer class="notes">
-  <h2>還要你給我的資料</h2>
-  <ul>
-    <li>個人專案三張卡片目前是空殼：<code>App</code> 的名稱與商店連結、<code>網站</code> 的網址、<code>GitHub</code> 帳號。三個連結在側欄也各有一顆按鈕，一起換。</li>
-    <li>手機與居住地已經依你的要求拿掉，email 用真的沒有遮碼。證書上的身分證字號、出生日期與 TOEIC 查詢 QR code 仍然蓋著黑條，是改過像素、不是用版面遮住。</li>
-    <li>成果數字裡只有「單局近三萬注、零拒單、帳務全對」與「49% 拒單」是測試環境實測；結算 38–68 秒降到 7.5 秒、啟動 100 秒降到 21 秒來自本機量測，面試被追問時照實說是本機數字。</li>
-  </ul>
-</footer>
-
 <script>
 (function(){
   var lb=document.getElementById('lb'),img=document.getElementById('lb-img');
