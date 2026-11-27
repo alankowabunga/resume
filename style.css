@@ -199,6 +199,9 @@ ul{margin:0;padding:0;list-style:none}
 .proj-out{grid-column:3;grid-row:1/3;font-size:.78rem;color:var(--faint);align-self:center}
 .proj span.d{grid-column:2;grid-row:2;font-size:.84rem;color:var(--muted);line-height:1.65}
 .proj em{font-style:normal;font-family:var(--font-mono);font-size:.7rem;color:var(--faint);letter-spacing:.04em;display:block;margin-top:.25rem}
+.proj-url{display:block;margin-top:.35rem;font-family:var(--font-mono);font-size:.7rem;color:var(--faint);letter-spacing:.01em;line-height:1.7;overflow-wrap:anywhere}
+.proj--flat{cursor:default}
+.proj--flat:hover{border-color:var(--line);background:none}
 .todo{color:var(--amber);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;border:1px dashed currentColor;border-radius:3px;padding:0 .35rem}
 
 @media (max-width:780px){
